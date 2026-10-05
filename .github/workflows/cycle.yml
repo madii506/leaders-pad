@@ -1,0 +1,10 @@
+name: cycle
+on:
+  schedule:
+    - cron: '23,53 * * * *'
+  workflow_dispatch:
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -fsS --max-time 70 "https://leaders-pad.vercel.app/api/cycle" || true
